@@ -9,14 +9,15 @@
       font-family: 'Roboto';
       text-align: center;
     }
-    .code {
+    .command {
+      cursor: pointer;
       background-color: black;
       color: white;
     }
-    .code::before {
-      content: '\00a0\00a0';
+    .command::before {
+      content: '\00a0\00a0$\00a0\00a0';
     }
-    .code::after {
+    .command::after {
       content: '\00a0\00a0';
     }
     .sample {
@@ -50,7 +51,7 @@
 <body translate="no">
   <section>
     <img src="logo.png"/>
-    <h1>Make your code simple today via <span class="code">$ npm i 1ib.js</span></h1>
+    <h1>Make your code simple today via <span class="command">npm i 1ib.js</span></h1>
   </section>
   <section class="sample">
     <div class="delete">import _ from 'lodash'</div>
@@ -58,5 +59,11 @@
     <div class="delete">import Sugar from 'sugar'</div>
     <div class="add">import { mount } from '1ib.js'</div>
   </section>
+  <script>
+    document.querySelector('.command').addEventListener('click', async () => {
+      const command = document.querySelector('.command').innerText
+      await navigator.clipboard.writeText(command)
+    })
+  </script>
 </body>
 </html>
