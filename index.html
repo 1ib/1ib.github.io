@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1ib - Just 1 Library.</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+    body {
+      margin: 0px;
+      font-family: 'Roboto';
+      text-align: center;
+    }
+    .code {
+      background-color: black;
+      color: white;
+    }
+    .code::before {
+      content: '\00a0\00a0';
+    }
+    .code::after {
+      content: '\00a0\00a0';
+    }
+    .sample {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      width: 60vw;
+    }
+    .delete, .add {
+      width: 30vw;
+      text-align: left;
+    }
+    .delete {
+      background-color: #fbe9eb;
+    }
+    .delete::before {
+      content: '\00a0\00a0-\00a0\00a0';
+      color: #ae979a;
+    }
+    .add {
+      background-color: #ecfdf0;
+      align-self: flex-end;
+    }
+    .add::before {
+      content: '\00a0\00a0+\00a0\00a0';
+      color: #9bb0a1;
+    }
+  </style>
+</head>
+
+<body translate="no">
+  <section>
+    <img src="logo.png"/>
+    <h1>Make your code simple today via <span class="code">$ npm i 1ib.js</span></h1>
+  </section>
+  <section class="sample">
+    <div class="delete">import _ from 'lodash'</div>
+    <div class="delete">import * as R from 'ramda'</div>
+    <div class="delete">import Sugar from 'sugar'</div>
+    <div class="add">import { mount } from '1ib.js'</div>
+  </section>
+</body>
+</html>
